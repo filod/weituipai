@@ -5,6 +5,12 @@ fs = require('fs')
 hbs = require('hbs')
 config  = require('./config')
 
+var express = require('express'),
+  routes = require('./routes/admin'),
+  http = require('http'),
+  path = require('path'),
+  engines = require('consolidate');
+
 function readPartials(path) {
   var files = fs.readdirSync(path);
   var partials = [];
@@ -20,24 +26,12 @@ function readPartials(path) {
   }
   return partials;
 }
-readPartials(config.tpl_path)
- 
-
-var rawRender = function (view, options, fn) { 
-  fn(err,str)
-}
-
-var express = require('express'),
-  routes = require('./routes/admin'),
-  http = require('http'),
-  path = require('path'),
-  engines = require('consolidate');
-  
+readPartials(config.tpl_path)  
 
 var app = express();
 
 app.configure(function() {
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || config.admin_port);
   app.set('views', config.tpl_path);
   app.set('layout', false);
   app.set('view engine', 'html');
@@ -45,7 +39,7 @@ app.configure(function() {
   app.use(express.favicon());
   app.use(express.cookieParser('jct7o32mxbjzto6r'));
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.bodyParser({ keepExtensions: true, uploadDir: path.join(__dirname, 'public/upload') }));
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(require('less-middleware')({
@@ -58,25 +52,22 @@ app.configure('development', function() {
   app.use(express.errorHandler());
 });
 
-app.get('/', function(req,res){
-  return routes.admin.get(req, res, app) 
-});
+/* routers*/
 app.post('/', routes.admin.post);
-
-
+var home =function(req,res){
+  return routes.admin.get(req, res, app) 
+}
+app.get('/', home);
+app.get('/page/:page?', home);
 app.get('/logout', routes.logout);
 app.post('/tpl', function(req,res){
   return routes.tpl(req, res, app) 
 });
 
 /*apis */
-api = require('./routes/api').api,
-console.log(api);
+api = require('./routes/api'),
+api.register(app)
 
-app.get('/api/v',api.readVideo)
-app.post('/api/v/update',api.updateVideo)
-app.post('/api/v/destory',api.destoryVideo)
-app.post('/api/v/create',api.createVideo)
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));

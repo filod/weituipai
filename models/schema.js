@@ -53,10 +53,19 @@ create = function(cb) {
     cb(err);
   });
 }
-
+sync = function (cb) {
+  sequelize.sync({
+    force: false
+  }).on('success', function() {
+    cb(null);
+  }).error(function(err) {
+    cb(err);
+  });
+}
 module.exports = {
   sequelize: sequelize,
   create: create,
+  sync: sync,
   User: Users,
   Video: Videos
 }

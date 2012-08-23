@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>微 · 推派 - 简洁而不简单的后台</title>
+  <meta name="description" content="开始页" />
+  <meta name="author" content="filod" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="/stylesheets/style.css" type="text/css"/>
+  <script data-main="/javascripts/admin-main" src="/javascripts/lib/require.js"></script>
+</head>
+<body>
+  <div id="global-header" class="navbar  navbar-fixed-top global-header clear">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">微·推派</a>
+        <ul class="nav">
+        </ul>
+        <ul class="nav pull-right">
+          <li class="divider-vertical "></li>
+          <li><a href="/logout"> <i class="icon-white icon-off"></i> 退出</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="admin-page" class="container hide">
+</div>
+<script type="text/template" id="tpl-app">
+  <div class="page-header">
+    <h1>所有的</h1>
+    <span class="pull-right">第 {{page}} 页</span>
+  </div>
+  <div class="pagination">
+    <ul>
+      <li class="{{prev}}" ><a id="" class="prev-page " href="javascript:;">上一页</a></li>
+      <li class="{{next}}" ><a id="" class="next-page " href="javascript:;">下一页</a></li>
+    </ul>
+    <div class="input-append pull-right">
+        <input type="text" class="search-query" placeholder="过滤分类"><button class="btn search-btn" type="button">搜</button>
+        <button id="new-video" class="add btn "><i class="icon-plus"></i> 新增视频</button>
+    </div>
+  </div>
+  <table id="tb-video-list" class="table table-bordered table-condensed" >
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>标题</th>
+        <th>类别</th>
+        <th>图片</th>
+        <th>视频</th>
+        <th>说明</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="video-list">
+    </tbody>
+  </table>
+  <div class="pagination">
+    <ul>
+      <li  class="{{prev}}"><a id="" class="prev-page" href="javascript:;">上一页</a></li>
+      <li  class="{{next}}"><a id="" class="next-page" href="javascript:;">下一页</a></li>
+    </ul>
+    
+    <span class="pull-right">第 {{page}} 页</span>
+  </div>
+</script>
+
+<script type="text/template" id="tpl-video">
+    <td class="id">
+      {{id}}
+    </td>
+    <td class="title">
+      <div class="view">{{title}}</div>
+      <div class="hide"><input class="span1" type="text" value="{{title}}"></div>
+    </td>
+    <td class="category">
+      <div class="view">{{category}}</div>
+      <div class="hide"><input class="span1" value="{{category}}" type="text"></div>
+    <td class="thumb">
+      <a href="/upload/{{thumb}}" target="_blank">看大图</a> 
+      <img class="pull-left" src="/upload/{{thumb}}" alt="{{title}}的缩略图"> <br />
+      <input class="span2" name="thumb" type="file" value="上传">
+    </td>
+    <td class="video">
+      <a href="/upload/{{video}}" target="_blank">点开预览</a> <br />
+      <input class="span2" name="video" type="file" value="上传">
+    </td>
+    <td class="description">
+      <div class="view">{{description}}</div>
+      <div class="hide"><textarea>{{description}}</textarea></div>
+    </td>
+    <td>
+      <div class="view">
+        <a href="javascript:;" class="edit"><i class="iicon-pencil"></i>编辑</a>
+        <a href="javascript:;" class="toggle-status"><i class="iicon-trash"></i>{{statusText}}</a>
+        <!--<a href="javascript:;" class="destroy"><i class="iicon-trash"></i>删除</a>-->
+      </div>
+      <div class="hide">
+        <a href="javascript:;" class="save"><i class="iicon-hdd"></i>保存</a>
+        <a href="javascript:;" class="cancel"><i class="iicon-"></i>取消</a>
+      </div>      
+    </td>
+</script>
+</body>
+</html>

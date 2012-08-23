@@ -27,5 +27,5 @@ require.config({
 require(['modernizr','jquery','backbone','routers/admin'], function(Modernizr, $, Backbone, Admin) {
 
     // Instantiates a new Router
-    this.router = new Admin();
+    var router = new Admin();
 });

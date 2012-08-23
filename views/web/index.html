@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>微 · 推派 </title>
+  <meta name="description" content="开始页" />
+  <meta name="author" content="filod" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/stylesheets/vtp.css" type="text/css"/>
+  <script data-main="/javascripts/app-main" src="/javascripts/lib/require.js"></script>
+</head>
+<body>
+<div id="main-page" class="container hide">
+</div>
+<script type="text/template" id="tpl-app">
+    <header class="hd1">
+        <div class="hright">
+            <a class="{{naver}}" href="{{naverLink}}"></a>
+        </div>
+        <div class="hleft">
+          <a href="/"><img src="/images/logo.png"></a>            
+        </div>
+    </header>
+    <section id="video-list" class="cont contvi">
+    </section>
+    {{#more}}
+    <div class="more">查看更多</div>
+    {{/more}}
+</script>
+<script type="text/template" id="tpl-video">
+  <p class="vtop"><span class="vtyp">{{category}}</span><span class="vtit">{{title}}</span></p>
+  <p class="vmid"><a href="/v/{{id}}"><img src="/upload/{{thumb}}"></a></p>
+  <p class="vbot"><i class="icon_intro"></i>{{description}}</p>
+</script>
+<script type="text/template" id="tpl-category">
+  <div class="tpys_tit">&nbsp;&nbsp;请选择分类</div>
+  {{#categories}}
+  <a class="tpys" href="/c/{{category}}">
+      <span class="tright"><i class="icon_s_right"></i></span>
+      <span class="tleft">{{category}}</span>
+  </a>
+  {{/categories}}
+</script>
+<script type="text/template" id="tpl-single-video">
+  <p class="vitop">{{title}}</p>
+  <p>
+      <video class="videos" poster="/upload/{{thumb}}" controls="controls" autoplay="autoplay">    
+          <source src="/upload/{{video}}" type="video/mp4"/>    
+      </video>
+  </p>
+  <p class="vibot1"><a class="icon_star"></a>已播放: {{viewcount}} 次</p>
+  <p class="vibot2"><a class="icon_intro"></a>{{description}}</p>
+</script>
+</body>
+</html>

@@ -8,9 +8,10 @@
   "dependencies": {
     "express": "3.0.0rc3",
     "hogan": "*",
+    "underscore": "*",
     "hogan.js": "*",
     "less-middleware": "*",
-    "consolidate" : "*",
-    "hbs":"1.0.5"
+    // "consolidate" : "*",
+    // "hbs":"1.0.5"
   }
 }

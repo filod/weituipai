@@ -4,20 +4,20 @@ models = require('../models/schema');
 exports.admin = {
   get: function(req, res, app) {
     if(req.signedCookies && req.signedCookies.user){
-      var path = app.get('views') + '/index.html'
+      var path = app.get('views') + '/admin/index.html'
       output = fs.readFileSync(path, 'utf8')
       res.send(output);
     }else{
-      res.render('signin')
+      var path = app.get('views') + '/admin/signin.html'
+      output = fs.readFileSync(path, 'utf8')
+      res.send(output);
     }
   },
   post: function(req, res) {
     models.User.authenticate(req.body.email,req.body.password,function (err, user, msg) {
       if(err){
-        console.log(err)
         return
       }
-      console.log('filod'+user.email)
       if(user){
         res.cookie('user', user.email, { signed: true });
         res.redirect('/')
@@ -31,6 +31,7 @@ exports.admin = {
 
 
 exports.logout = function (req, res) {
+  console.log('filod');
   res.clearCookie('user')
   res.redirect('/')
 }

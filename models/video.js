@@ -11,12 +11,20 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     category: DataTypes.STRING,
     thumb: DataTypes.STRING,
+    video: DataTypes.STRING,
     description: DataTypes.TEXT,
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "inactive"
+    },
     ctime: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
     },
-    viewcount: DataTypes.INTEGER
+    viewcount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }
   }, {
     timestamps: false,
     classMethods: {

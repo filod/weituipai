@@ -3,20 +3,18 @@ define(['jquery', 'backbone', 'views/app'], function($, Backbone, AppView) {
 
         initialize: function() {
 
-            // Tells Backbone to start watching for hashchange events
-            Backbone.history.start();
+            Backbone.history.start({pushState: true});
 
         },
         // All of your Backbone Routes (add more)
         routes: {
-            // When there is no hash bang on the url, the home method is called
-            '': 'home'
+            '': 'home',
+            'page/:page': 'home'
         },
 
-        'home': function() {
-
+        'home': function(page) {
             // Instantiating mainView and anotherView instances
-            var appView = new AppView();
+            var appView = new AppView(parseInt(page) || 1, this);
         }
     });
 

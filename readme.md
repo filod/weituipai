@@ -1,7 +1,12 @@
 # how to setup ?  
 1. install [node](http://nodejs.org)  
 
-2. create database & make some seed data:  
+2. install package  
+  ```bash
+  $ npm  install
+  ```  
+
+3. create database & make some seed data:  
   ```bash
   $ node models/create.js  
   ```  
@@ -12,7 +17,7 @@
   $ node seed.js
   ```
 
-3. start app!  
+4. start app!  
   ```bash  
   $ node app-web.js # main page in port 3000  
 

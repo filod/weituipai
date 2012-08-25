@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'hogan', 'models/Video'], 
+define(['jquery', 'backbone', 'hogan', 'models/video'], 
   function($, Backbone, hogan, Video) {
   var SingleVideoView = Backbone.View.extend({
     el: '#main-page',

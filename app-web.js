@@ -2,14 +2,14 @@
  * Module dependencies.
  */
 fs = require('fs')
-hbs = require('hbs')
+// hbs = require('hbs')
 config  = require('./config')
 
 var express = require('express'),
   routes = require('./routes/web'),
   http = require('http'),
-  path = require('path'),
-  engines = require('consolidate')
+  path = require('path')
+  // engines = require('consolidate')
 
 var app = express()
 

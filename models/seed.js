@@ -19,8 +19,7 @@ User.create({
 }).error(function(err) {
   console.log("ERROR: " + err);
 });
-Video.drop().success(function() { 
-})
+/*
   for (var i = 0; i < 25; i++) {
     var v = Video.build({
       title : ["电视问政直播干部被问得尴尬出汗",'子女听信巫师谗言将母亲活活烧死', '太阳照常升起'][i%3] + i,
@@ -38,3 +37,4 @@ Video.drop().success(function() {
     })
   }; 
 
+*/

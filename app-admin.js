@@ -26,7 +26,7 @@ function readPartials(path) {
   }
   return partials;
 }
-readPartials(config.tpl_path)  
+// readPartials(config.tpl_path)  
 
 var app = express();
 

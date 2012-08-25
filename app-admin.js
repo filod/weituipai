@@ -8,8 +8,8 @@ config  = require('./config')
 var express = require('express'),
   routes = require('./routes/admin'),
   http = require('http'),
-  path = require('path'),
-  engines = require('consolidate');
+  path = require('path');
+  // engines = require('consolidate');
 
 function readPartials(path) {
   var files = fs.readdirSync(path);

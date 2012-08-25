@@ -9,9 +9,10 @@
     "express": "3.0.0rc3",
     "hogan": "*",
     "underscore": "*",
+    "log4js": "*",
     "hogan.js": "*",
-    "less-middleware": "*",
-    // "consolidate" : "*",
-    // "hbs":"1.0.5"
+    "bcrypt": "*",
+    "sequelize": "*",
+    "less-middleware": "*"
   }
 }

@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'hogan', 'collections/Videos', 'views/video-web'], 
+define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video-web'], 
   function($, Backbone, hogan, Videos, VideoView) {
 
   var AppView = Backbone.View.extend({

@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'hogan', 'collections/Videos'], function($, Backbone, hogan, Videos) {
+define(['jquery', 'backbone', 'hogan', 'collections/videos'], function($, Backbone, hogan, Videos) {
   var VideoView = Backbone.View.extend({
     tagName: 'tr',
     tpl: hogan.compile($('#tpl-video').html()),

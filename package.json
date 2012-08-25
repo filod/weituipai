@@ -12,6 +12,7 @@
     "log4js": "*",
     "hogan.js": "*",
     "bcrypt": "*",
+    "hbs": "*",
     "sequelize": "*",
     "less-middleware": "*"
   }

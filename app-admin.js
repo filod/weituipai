@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 fs = require('fs')
-// hbs = require('hbs')
+hbs = require('hbs')
 config  = require('./config')
 
 var express = require('express'),

@@ -62,6 +62,13 @@ var api = {
         }
       })
     }
+    // if (req.query.status) {
+    //   _.extend(query, {
+    //     where: {
+    //       status: req.query.status
+    //     }
+    //   })
+    // }
     _.extend(query, {
       offset: page * pagesize,
       limit: pagesize
@@ -83,7 +90,8 @@ var api = {
     })
   },
   destoryVideo: function(req, res) {
-    models.Video.find(req.params.id).success(function(v) {
+    console.log(req.params.id);
+    models.Video.find(parseInt(req.params.id)).success(function(v) {
       v.destroy().success(function() {
         res.json(ret)
       })

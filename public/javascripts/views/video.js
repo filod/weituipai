@@ -32,6 +32,9 @@ define(['jquery', 'backbone', 'hogan', 'collections/Videos'], function($, Backbo
       this.$description = this.$('.description textarea')
       return this
     },
+    remove: function () {
+      this.$el.remove()
+    },
     upload: function(e) {
       var self = this
       var file = e.target.files[0]　
@@ -53,7 +56,11 @@ define(['jquery', 'backbone', 'hogan', 'collections/Videos'], function($, Backbo
       this.toggleEdit()
     },
     destroy: function() {
-
+      this.model.destroy().done(function (data) {
+        if(data.code == 0){
+          // this.$el
+        }
+      })
     },
     toggleStatus: function() {
       this.model.set('status',this.model.get('status') === 'inactive'? 'active' :'inactive')

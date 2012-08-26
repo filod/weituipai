@@ -15,7 +15,7 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video-web'],
       this.videos.on('error', this.error, this);
       this.videos.on('reset', this.addAll, this);
       this.page = 1
-      this.category = category || '最新'
+      this.category = category 
       this.fetchVideo()
       this.render()
       this.$vl = this.$('#video-list')
@@ -26,7 +26,8 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video-web'],
       return this.videos.fetch({
         data: {
           page: this.page,
-          category: this.category
+          category: this.category,
+          status: 'active'
         }
       })
     },

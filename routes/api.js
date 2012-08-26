@@ -45,6 +45,7 @@ var api = {
     var query = {
       order: "id DESC"
     }
+    var where = {}
     if(req.params.id){
       models.Video.find(parseInt(req.params.id)).success(function(v) {
         v.updateAttributes({
@@ -55,20 +56,20 @@ var api = {
       })
       return
     }
+    console.log(req.query.filter);
     if (req.query.category) {
-      _.extend(query, {
-        where: {
+      _.extend(where, {
           category: req.query.category
-        }
       })
     }
-    // if (req.query.status) {
-    //   _.extend(query, {
-    //     where: {
-    //       status: req.query.status
-    //     }
-    //   })
-    // }
+    if (req.query.status) {
+      _.extend(where, {
+          status: req.query.status
+      })
+    }
+    if(_.keys(where).length >0){
+      query.where = where
+    }
     _.extend(query, {
       offset: page * pagesize,
       limit: pagesize

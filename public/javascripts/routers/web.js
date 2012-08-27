@@ -10,8 +10,7 @@ define(['jquery', 'backbone', 'views/index-web', 'views/category-web' ,'views/si
         navToPage: function(e) {
             var self = this
             self.navigate($(e.currentTarget).attr('href'), {
-                trigger: true,
-                replace: true
+                trigger: true
             })
             return false
         },

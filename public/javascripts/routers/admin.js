@@ -3,7 +3,7 @@ define(['jquery', 'backbone', 'views/app'], function($, Backbone, AppView) {
 
         initialize: function() {
 
-            Backbone.history.start({pushState: true});
+             Backbone.history.start({pushState: true});
 
         },
         // All of your Backbone Routes (add more)

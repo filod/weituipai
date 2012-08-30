@@ -1,7 +1,7 @@
 define(['jquery', 'backbone', 'hogan', 'collections/categories'], 
   function($, Backbone, hogan, Categories) {
   var CategoryView = Backbone.View.extend({
-    el: '#main-page',
+    el: '#category-page',
     tpl: hogan.compile($('#tpl-app').html()),
     tplCategories: hogan.compile($('#tpl-category').html()),
     events: {
@@ -10,7 +10,6 @@ define(['jquery', 'backbone', 'hogan', 'collections/categories'],
       var self = this
       self.categories = new Categories()
       self.categories.fetch().done(function (data) {
-        console.log(data);
         self.$section.append(self.tplCategories.render({
           categories:data
         }))

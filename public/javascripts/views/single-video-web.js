@@ -1,7 +1,7 @@
 define(['jquery', 'backbone', 'hogan', 'models/video'], 
   function($, Backbone, hogan, Video) {
   var SingleVideoView = Backbone.View.extend({
-    el: '#main-page',
+    el: '#video-page',
     tpl: hogan.compile($('#tpl-app').html()),
     tplVideo: hogan.compile($('#tpl-single-video').html()),
     events: {

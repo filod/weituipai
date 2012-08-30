@@ -10,6 +10,7 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video-web'],
 
     initialize: function(category, router) {
       var self = this;
+      this.home = true
       this.router = router
       this.videos = new Videos()
       this.videos.on('error', this.error, this);
@@ -30,6 +31,10 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video-web'],
           status: 'active'
         }
       })
+    },
+    restore: function () {
+      this.$el.fadeIn(100)
+      $(window).scrollTop(+this.prevScrollTop)
     },
     more: function () {
       var self = this;

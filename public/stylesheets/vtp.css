@@ -80,6 +80,7 @@ header,nav,section,article,footer,figure,figcaption
 .vedi
 {
   width:96%;
+  position: relative;
   padding-top:8px;
   margin:0 auto
 }
@@ -103,7 +104,8 @@ header,nav,section,article,footer,figure,figcaption
 
 .vmid
 {
-  margin-top:3px
+  margin-top:3px;
+  position:relative;
 }
 
 .vmid img
@@ -281,4 +283,19 @@ header,nav,section,article,footer,figure,figcaption
   background:url(/images/icons-18.png) no-repeat;
   background-position:76% 0;
   margin-right:2px
+}
+
+.vmid img.play-mask {
+  opacity: .8;
+  width:75px;
+  height:75px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -37px;
+  margin-top: -37px;
+}
+.logo{
+  position: relative;
+  top:-7px;
 }

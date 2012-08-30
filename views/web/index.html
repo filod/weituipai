@@ -7,6 +7,8 @@
   <meta name="description" content="开始页" />
   <meta name="author" content="filod" />
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="apple-touch-icon-precomposed" href="/images/desk.png" />
+  <link rel="apple-touch-icon-precomposed" href="/images/desk.png" sizes="57x57" />
   <link rel="shortcut icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/stylesheets/vtp.css" type="text/css"/>
   <script data-main="/javascripts/app-main" src="/javascripts/lib/require.js"></script>
@@ -14,13 +16,17 @@
 <body>
 <div id="main-page" class="container hide">
 </div>
+<div id="category-page" class="container hide">
+</div>
+<div id="video-page" class="container hide">
+</div>
 <script type="text/template" id="tpl-app">
     <header class="hd1">
         <div class="hright">
             <a class="{{naver}}" href="{{naverLink}}"></a>
         </div>
         <div class="hleft">
-          <a href="/"><img src="/images/logo.png"></a>            
+          <a href="/"><img class="logo" src="/images/logo.png"></a>            
         </div>
     </header>
     <section id="video-list" class="cont contvi">
@@ -31,7 +37,7 @@
 </script>
 <script type="text/template" id="tpl-video">
   <p class="vtop"><span class="vtyp">{{category}}</span><span class="vtit">{{title}}</span></p>
-  <p class="vmid"><a href="/v/{{id}}"><img src="/upload/{{thumb}}"></a></p>
+  <p class="vmid"><a href="/v/{{id}}" ><img src="/upload/{{thumb}}"></a><img class="play-mask" src="/images/play.png"></img></p>
   <p class="vbot"><i class="icon_intro"></i>{{description}}</p>
 </script>
 <script type="text/template" id="tpl-category">

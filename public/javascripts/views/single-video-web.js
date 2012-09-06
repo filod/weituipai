@@ -23,6 +23,9 @@ define(['jquery', 'backbone', 'hogan', 'models/video'],
         naverLink : '/'
       })).fadeIn(100)
       return this
+    },
+    pause: function () {
+      this.$('video')[0].pause()
     }
   })
   return SingleVideoView

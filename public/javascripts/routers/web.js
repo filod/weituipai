@@ -10,6 +10,7 @@ define(['jquery', 'backbone', 'views/index-web', 'views/category-web' ,'views/si
             self.bind('beforeroute', function() {
                 self.activeView.prevScrollTop = $(window).scrollTop()
                 self.activeView.$el.hide()
+                if(self.activeView.pause) self.activeView.pause()
             })
             $(document).on('click', 'a', $.proxy(this.navToPage,this))
         },

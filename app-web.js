@@ -12,7 +12,7 @@ var express = require('express'),
   // engines = require('consolidate')
 
 var app = express()
-
+var maxAge = 3600000 * 24 * 30;
 app.configure(function() {
   app.set('port', process.env.PORT || config.port)
   app.set('views', config.tpl_path)
@@ -25,7 +25,7 @@ app.configure(function() {
   app.use(require('less-middleware')({
     src: __dirname + '/public'
   }))
-  app.use(express.static(path.join(__dirname, 'public')))
+  app.use(express.static(path.join(__dirname, 'public'),{maxAge: maxAge}))
 })
 
 app.configure('development', function() {

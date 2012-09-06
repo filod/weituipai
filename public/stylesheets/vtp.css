@@ -9,7 +9,7 @@ body,div,p,ul,li,table,tbody,tr,td,textarea,form,input,h1,h2,h3,h4,h5,dl,dt,dd,i
 
 body
 {
-  background:#FFF;
+  background: #F1F1F1;
   font-family:"\5FAE\8F6F\96C5\9ED1",Helvetica;
   -webkit-user-select:none;
   -webkit-text-size-adjust:none
@@ -36,7 +36,7 @@ header,nav,section,article,footer,figure,figcaption
   background:#fff;
   border-bottom:1px solid #eee;
   z-index:999;
-  box-shadow:0 2px 3px #eee
+  box-shadow:0 2px 3px #ccc;
 }
 
 .hleft
@@ -84,7 +84,6 @@ header,nav,section,article,footer,figure,figcaption
 
 .vedi
 {
-  width:96%;
   position: relative;
   padding-top:8px;
   margin:0 auto
@@ -302,4 +301,7 @@ header,nav,section,article,footer,figure,figcaption
 .logo{
   position: relative;
   top:-7px;
+}
+.container{
+  padding: 0 10px;
 }

@@ -76,7 +76,7 @@ header,nav,section,article,footer,figure,figcaption
 {
   font-size:1.2em;
   position: relative;
-  padding-right: 40px;
+  padding-right: 70px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -100,7 +100,7 @@ header,nav,section,article,footer,figure,figcaption
 
 .vtyp
 {
-  right: 0;
+  right: 0px;
   position: absolute;
   height:26px;
   /*width:40px;*/
@@ -224,9 +224,7 @@ header,nav,section,article,footer,figure,figcaption
 }
 
 .contvi p
-{
-  width:96%;
-  margin:0 auto
+{  margin:0 auto
 }
 
 .vitop

@@ -20,7 +20,7 @@ define(['jquery', 'backbone', 'hogan', 'models/video'],
     render: function() {
       this.$el.html(this.tpl.render({
         naver:   'icon_back',
-        naverLink : '/'
+        naverLink : '/back'
       })).fadeIn(100)
       return this
     },

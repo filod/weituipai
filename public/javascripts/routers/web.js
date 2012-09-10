@@ -36,22 +36,22 @@ define(['jquery', 'backbone', 'views/index-web', 'views/category-web' ,'views/si
         },
         routes: {
             '': 'home',
+            'back': 'backHome',
             'c/:category': 'home',
             'categories': 'categories',
             'v/:id': 'singleVideo'
         },
         'home': function(category) {
-            if(this.homeview){
-                var isBack = (category && category === encodeURIComponent(this.homeview.category)) || (!category && !this.homeview.category) 
-                if(isBack){
-                    this.homeview.restore()
-                    this.activeView = this.homeview
-                    return
-                }
-            }
             this.homeview = new IndexView(category || '', this);
-            
             this.activeView = this.homeview
+        },
+        'backHome': function() {
+            if(this.homeview){
+                this.homeview.restore()
+                this.activeView = this.homeview
+            }else{
+                this.home()
+            }
         },
         'categories': function() {
             this.categoryview = new CategoryView()

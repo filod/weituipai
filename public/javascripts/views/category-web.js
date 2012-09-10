@@ -24,7 +24,7 @@ define(['jquery', 'backbone', 'hogan', 'collections/categories'],
     render: function() {
       this.$el.html(this.tpl.render({
         naver:   'icon_back',
-        naverLink : '/'
+        naverLink : '/back'
       })).fadeIn(100)
       return this
     }

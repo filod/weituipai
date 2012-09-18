@@ -40,6 +40,7 @@ var home = function (req, res ) {
 }
 /* routers*/
 app.get('/', home)
+app.get('/back', home)
 // app.post('/', routes.home)
 app.get('/categories', home)
 app.get('/c/:category', home)

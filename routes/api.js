@@ -56,7 +56,6 @@ var api = {
       })
       return
     }
-    console.log(req.query.filter);
     if (req.query.category) {
       _.extend(where, {
           category: req.query.category
@@ -99,8 +98,6 @@ var api = {
     })
   },
   upload: function(req, res, next) {
-    // console.log(req.files);
-    console.log(req.files.thumb);
     if (req.path.indexOf("upload/thumb") > -1) {
       req.body.thumb = path.basename(req.files['thumb'].path)
     } else if (req.path.indexOf("upload/video") > -1) {

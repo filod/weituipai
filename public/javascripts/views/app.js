@@ -79,7 +79,7 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos', 'views/video'],
       })).fadeIn(100)
     },
     error: function(data) {
-      alert(data.msg)
+      // alert(data.msg)
     },
     addOne: function(v) {
       var view = new VideoView({

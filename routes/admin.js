@@ -31,7 +31,6 @@ exports.admin = {
 
 
 exports.logout = function (req, res) {
-  console.log('filod');
   res.clearCookie('user')
   res.redirect('/')
 }

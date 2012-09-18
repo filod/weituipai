@@ -26,7 +26,7 @@
             <a class="{{naver}}" href="{{naverLink}}"></a>
         </div>
         <div class="hleft">
-          <a href="/"><img class="logo" src="/images/logo.png"></a>            
+          <a href="/"><img class="logo" src="/images/logo.jpg"></a>            
         </div>
     </header>
     <section id="video-list" class="cont contvi">
@@ -59,6 +59,9 @@
       <video class="videos" poster="/upload/{{thumb}}" controls="controls" autoplay="autoplay">    
           <source src="/upload/{{video}}" type="video/mp4"/>    
       </video>
+      {{#notiphone}}
+      <img class="play-mask" src="/images/play.png"></img>
+      {{/notiphone}}
   </p>
   <p class="vibot1"><a class="icon_star"></a>已播放: {{viewcount}} 次</p>
   <p class="vibot2"><a class="icon_intro"></a>{{description}}</p>

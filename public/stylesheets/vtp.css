@@ -296,7 +296,7 @@ header,nav,section,article,footer,figure,figcaption
   position: relative;
 }
 img.play-mask {
-  opacity: .7;
+  opacity: .5;
   width:75px;
   height:75px;
   position: absolute;
@@ -305,7 +305,9 @@ img.play-mask {
   margin-left: -37px;
   margin-top: -37px;
 }
-.logo{
+.logo {
+  width: 85px;
+  height: 40px;
   position: relative;
   top:-7px;
 }

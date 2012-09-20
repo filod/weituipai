@@ -69,9 +69,9 @@ define(['jquery', 'backbone', 'hogan', 'collections/videos'], function($, Backbo
     update: function() {
       var self = this
       this.model.save({
-        title: this.$title.val(),
-        category: this.$category.val(),
-        description: this.$description.val()
+        title: $.trim(this.$title.val()),
+        category: $.trim(this.$category.val()),
+        description: $.trim(this.$description.val())
       },{wait: true})
     },
     toggleEdit: function() {
